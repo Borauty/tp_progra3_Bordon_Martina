@@ -1,4 +1,4 @@
-
+{
 /* Creando array como pro
 const frutas = [];
 
@@ -252,4 +252,4 @@ bot_vaciar_carrito.addEventListener("click", Event =>{
 
 
 
-init()
+init()}

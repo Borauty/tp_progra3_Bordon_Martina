@@ -329,3 +329,11 @@ main {
     flex-direction: column;
     gap: 15px;
 }
+
+/* DEBUG CARRITO */
+.seccion-carrito,
+.seccion-carrito *,
+#modal-confirmar,
+#modal-confirmar * {
+    outline: 2px solid red;
+}

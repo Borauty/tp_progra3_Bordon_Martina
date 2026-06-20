@@ -1,41 +1,70 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GamerZone - Bienvenida</title>
-    <link rel="icon" href="img/favicon.png">
+    <link rel="stylesheet" href="css/bienvenida.css">
     <script src="js/bienvenida.js" defer></script>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Practica</title>
 </head>
-
-<body>
-
-    <!-- Header -->
-    <header class="header">
-
-        <a href="index.html">
-            <div class="logo">GamerZone</div>
-        </a>
-
-        <div class="nombreAlumno">
-            <nav id="nav_modificable"></nav>
+<body class = "sinBordes"   >
+    <header class = "encabezado">
+        <div class="divEncabezado">
+            <div class="divLogo">   
+                <img src="img/logo.png" alt="Logo de Compra Gamer" class="logoCompraGamer">    
+            </div>
+            <div class = "divTitulo">
+                <h1 class = "titulo">Compra Gamer</h1>
+                <p1 class = "alumnos">Lautaro Bordon - Matias Martina</p1>
+            </div>
         </div>
-
     </header>
 
-    <!-- Contenedor principal -->
-    <main class="seccion-bienvenida">
-        <h1>Bienvenido a GamerZone</h1>
-        <p>Ingresa tu nombre para comenzar tu compra</p>
+    <nav class = "navegacion"></nav>
 
-        <input type="text" id="input-nombre" placeholder="Tu nombre...">
-        <button id="boton-continuar">Continuar</button>
+    <main class = "contenido-principal  ">
+        <h1 class = "bienvenidos">Bienvenidos a Compra Gamer</h1>
+        <div class = "seccionIngresoNombre">
 
-        <p id="error-nombre" class="error-oculto">Por favor ingresa tu nombre</p>
+            <p1 class = "parrafoIngresNombre">Ingrese su nombre para comenzar a comprar</p1>
+            <input
+                type="text"
+                class="inputNombre"
+                id="nombreUsuario"
+                placeholder="Tu nombre..."
+            >
+            <button type="button" class="botonAceptar" id="boton-continuar">
+                Aceptar
+            </button>
+            <p id="error-nombre" class="error-oculto">
+                Por favor, ingresá tu nombre.
+            </p>
+        </div>
     </main>
 
-</body>
+    <footer class = "pie-pagina">
+        <div class="footerMarca">
+        <h3>Compra Gamer</h3>
+        <p>Todo lo que necesitás para armar, mejorar y disfrutar tu setup.</p>
+    </div>
 
+    <div class="footerEnlaces">
+        <h4>Información</h4>
+
+        <a href="#">Quiénes somos</a>
+        <a href="#">Contactanos</a>
+        <a href="#">Preguntas frecuentes</a>
+    </div>
+
+    <div class="footerCreditos">
+        <p>
+            Proyecto académico desarrollado por Matías Martina y Lautaro Bordón
+            para la materia Programación III.
+        </p>
+
+        <p>© 2026 Compra Gamer. Todos los derechos reservados.</p>
+    </div>
+    </footer>
+
+</body>
 </html>

@@ -1,38 +1,35 @@
-function init() {
-    imprimirDatosAlumno(alumno);
-}
+const inputNombre = document.getElementById("nombreUsuario");
+const botonContinuar = document.getElementById("boton-continuar");
+const errorNombre = document.getElementById("error-nombre");
 
-//Datos de los alumnos (se repite en todas las pantallas)
+botonContinuar.addEventListener("click", continuarCompra);
 
-const alumno = {
-    nombre: 'Martina',
-    apellido: 'Bordon'
-}
+inputNombre.addEventListener("keydown", (evento) => {
+    if (evento.key === "Enter") {
+        continuarCompra();
+    }
+});
 
-function imprimirDatosAlumno(alumno1) {
-    let nav = document.getElementById("nav_modificable");
-    nav.innerHTML = `${alumno1.nombre} ${alumno1.apellido}`
-}
+inputNombre.addEventListener("input", () => {
+    if (inputNombre.value.trim() !== "") {
+        errorNombre.classList.add("error-oculto");
+    }
+});
 
+function continuarCompra() {
+    const nombre = inputNombre.value.trim();
 
-//Pantalla bienvenida
-
-let input_nombre = document.getElementById("input-nombre");
-let boton_continuar = document.getElementById("boton-continuar");
-let error_nombre = document.getElementById("error-nombre");
-
-boton_continuar.addEventListener("click", Event => {
-    if (input_nombre.value.trim() == "") {
-        error_nombre.classList.remove("error-oculto");
+    if (nombre === "") {
+        errorNombre.classList.remove("error-oculto");
+        inputNombre.focus();
         return;
     }
-    guardarNombreCliente(input_nombre.value.trim());
+
+    guardarNombreCliente(nombre);
+
     window.location.href = "productos.html";
-})
+}
 
 function guardarNombreCliente(nombre) {
     localStorage.setItem("nombreCliente", nombre);
 }
-
-
-init()

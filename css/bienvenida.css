@@ -1,0 +1,239 @@
+/* TEMA COMPRA GAMER */
+
+:root {
+    --fondo-principal: #0b0714;
+    --fondo-caja: rgba(23, 17, 38, 0.88);
+    --fondo-input: rgba(11, 7, 20, 0.92);
+
+    --texto-principal: #f5f3ff;
+    --texto-secundario: #c4b5fd;
+
+    --violeta: #8b5cf6;
+    --rosa: #ec4899;
+    --celeste: #22d3ee;
+    --coral: #fb7185;
+}
+
+/* CONFIGURACIÓN GENERAL */
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    color: var(--texto-principal);
+    background-color: var(--fondo-principal);
+    background-image: url("../img/keyboard.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.sinBordes * {
+    border: none !important;
+}
+/* HEADER Y MAIN */
+
+.encabezado,
+.contenido-principal {
+    border: 4px solid var(--violeta);
+    background-color: var(--fondo-caja);
+}
+
+/* HEADER */
+
+.divEncabezado {
+    border: 3px solid var(--rosa);
+    padding: 8px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.divLogo {
+    border: 3px solid var(--rosa);
+    padding: 5px;
+
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.logoCompraGamer {
+    width: 90px;
+    height: auto;
+    border: 3px solid var(--celeste);
+}
+
+.divTitulo {
+    border: 3px solid var(--rosa);
+    padding: 8px;
+
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.titulo {
+    color: var(--celeste);
+    font-size: 30px;
+    border: 3px solid var(--celeste);
+    margin: 0;
+    padding: 3px 6px;
+}
+
+.alumnos {
+    color: var(--texto-principal);
+    font-size: 20px;
+    border: 3px solid var(--coral);
+    margin: 0;
+    padding: 3px 6px;
+}
+
+/* MAIN */
+
+.contenido-principal {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.bienvenidos {
+    color: var(--celeste);
+    font-size: 20px;
+    border: 3px solid var(--celeste);
+    margin: 0;
+    padding: 6px;
+    text-align: center;
+}
+
+.seccionIngresoNombre {
+    border: 3px solid var(--violeta);
+    background-color: rgba(11, 7, 20, 0.45);
+    padding: 5px;
+    margin-top: 10px;
+
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.parrafoIngresNombre {
+    color: var(--texto-principal);
+    border: 3px solid var(--rosa);
+    font-size: 35px;
+    margin: 0;
+    padding: 4px 8px;
+    text-align: center;
+}
+
+.inputNombre {
+    color: var(--texto-principal);
+    background-color: var(--fondo-input);
+    border: 3px solid var(--violeta);
+    font-size: 25px;
+    padding: 6px 10px;
+    outline: none;
+}
+
+.inputNombre::placeholder {
+    color: var(--texto-secundario);
+}
+
+.inputNombre:focus {
+    border-color: var(--celeste);
+}
+
+.botonAceptar {
+    color: var(--texto-principal);
+    background-color: var(--rosa);
+    border: 3px solid var(--texto-principal);
+    padding: 7px 16px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.botonAceptar:hover {
+    background-color: var(--coral);
+}
+
+.error-oculto {
+    display: none;
+}
+
+#error-nombre {
+    color: #fb7185;
+    font-size: 16px;
+    margin: 0;
+    text-align: center;
+}
+/* FOOTER */
+
+.footer {
+    border: 4px solid var(--violeta);
+    background-color: var(--fondo-caja);
+    padding: 5px;
+    margin-top: 10px;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.footerMarca,
+.footerEnlaces,
+.footerCreditos {
+    border: 3px solid var(--rosa);
+    padding: 3px;
+    flex: 1;
+}
+
+.footerMarca h3,
+.footerMarca p,
+.footerEnlaces h4,
+.footerEnlaces a,
+.footerCreditos p {
+    border: 3px solid var(--coral);
+    padding: 2px;
+    margin: 2px 0;
+    text-align: center;
+}
+
+.footerEnlaces {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.footerEnlaces a {
+    color: var(--celeste);
+    text-decoration: none;
+}
+
+.footerEnlaces a:hover {
+    color: var(--rosa);
+}
+
+.footerCreditos {
+    font-size: 10px;
+}

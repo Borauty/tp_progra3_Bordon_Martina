@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bienvenida.css">
+    <script src="js/bienvenida.js" defer></script>
+    <title>Practica</title>
+</head>
+<body class = "sinBordes"   >
+    <header class = "encabezado">
+        <div class="divEncabezado">
+            <div class="divLogo">   
+                <img src="img/logo.png" alt="Logo de Compra Gamer" class="logoCompraGamer">    
+            </div>
+            <div class = "divTitulo">
+                <h1 class = "titulo">Gamer Zone</h1>
+                <p1 class = "alumnos">Lautaro Bordon - Matias Martina</p1>
+            </div>
+        </div>
+    </header>
+
+    <nav class = "navegacion"></nav>
+
+    <main class = "contenido-principal  ">
+        <h1 class = "bienvenidos">Bienvenidos a Gamer Zone</h1>
+        <div class = "seccionIngresoNombre">
+
+            <p1 class = "parrafoIngresNombre">Ingrese su nombre para comenzar a comprar</p1>
+            <input
+                type="text"
+                class="inputNombre"
+                id="nombreUsuario"
+                placeholder="Tu nombre..."
+            >
+            <button type="button" class="botonAceptar" id="boton-continuar">
+                Aceptar
+            </button>
+            <p id="error-nombre" class="error-oculto">
+                Por favor, ingresá tu nombre.
+            </p>
+        </div>
+    </main>
+
+    <footer class = "pie-pagina">
+        <div class="footerMarca">
+        <h3>Gamer Zone</h3>
+        <p>Todo lo que necesitás para armar, mejorar y disfrutar tu setup.</p>
+    </div>
+
+    <div class="footerEnlaces">
+        <h4>Información</h4>
+
+        <a href="#">Quiénes somos</a>
+        <a href="#">Contactanos</a>
+        <a href="#">Preguntas frecuentes</a>
+    </div>
+
+    <div class="footerCreditos">
+        <p>
+            Proyecto académico desarrollado por Matías Martina y Lautaro Bordón
+            para la materia Programación III.
+        </p>
+
+        <p>© 2026 Gamer Zone. Todos los derechos reservados.</p>
+    </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GamerZone - Carrito</title>
+    <link rel="icon" href="img/favicon.png">
+    <script src="js/carrito.js" defer></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+
+        <a href="index.html">
+            <div class="logo">GamerZone</div>
+        </a>
+
+        <div class="nombreAlumno">
+            <nav id="nav_modificable"></nav>
+        </div>
+
+        <a href="productos.html" class="link-carrito">
+            <div class="carrito">
+                <span>Volver a productos</span>
+            </div>
+        </a>
+    </header>
+
+
+    <!-- Contenedor principal -->
+    <main>
+        <section class="seccion-carrito">
+            <h2>Carrito</h2>
+
+            <div id="items-carrito">
+                <p>No hay elementos en el carrito.</p>
+            </div>
+
+            <div class="total-carrito">
+                <p>Total: <span id="precio-total">$0.00</span></p>
+            </div>
+
+            <div class="botones-carrito">
+                <button id="vaciar-carrito">Vaciar carrito</button>
+                <button id="finalizar-compra">Finalizar compra</button>
+            </div>
+        </section>
+
+        <!-- Modal de confirmacion -->
+        <div id="modal-confirmar" class="modal-oculto">
+            <div class="contenido-modal">
+                <p>¿Confirmas la compra?</p>
+                <button id="boton-confirmar-si">Si, confirmar</button>
+                <button id="boton-confirmar-no">Cancelar</button>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GamerZone - Productos</title>
+    <link rel="icon" href="img/favicon.png">
+    <script src="js/productos.js" defer></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+
+        <a href="index.html">
+            <div class="logo">GamerZone</div>
+        </a>
+
+        <div class="nombreAlumno">
+            <nav id="nav_modificable"></nav>
+        </div>
+
+        <input type="text" placeholder="Buscar..." class="barra-busqueda">
+
+        <a href="carrito.html" class="link-carrito">
+            <div class="carrito">
+                <span>Carrito: <span id="contador-carrito">0</span> productos</span>
+            </div>
+        </a>
+    </header>
+
+
+    <!-- Contenedor principal -->
+    <main>
+        <section class="seccion-categorias">
+            <button id="botonPerifericos" class="boton-categoria">Mouses y Teclados</button>
+            <button id="botonAudio" class="boton-categoria">Audio</button>
+            <button id="botonTodos" class="boton-categoria">Ver todos</button>
+        </section>
+
+        <section class="seccion-productos">
+            <h2>Nuestros productos</h2>
+            <div class="botones-orden">
+                <button id="OrdenarAZ">Ordenar A-Z</button>
+                <button id="OrdenarZA">Ordenar Z-A</button>
+                <button id="botonMasMen">Precio menor-mayor</button>
+                <button id="botonMenMas">Precio mayor-menor</button>
+            </div>
+            <div id="contenedor-productos">
+            </div>
+
+            <div class="botones-paginacion">
+                <button id="paginaAnterior">Anterior</button>
+                <span id="numero-pagina">Página 1</span>
+                <button id="paginaSiguiente">Siguiente</button>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>

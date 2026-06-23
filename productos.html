@@ -1,65 +1,80 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GamerZone - Productos</title>
-    <link rel="icon" href="img/favicon.png">
+    <title>Productos</title>
     <script src="js/productos.js" defer></script>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/productos.css">
 </head>
-
 <body>
+    <header class = "encabezado">
+        <div class="divEncabezado">
+            <div class="divLogo">   
+                <img src="img/logo.png" alt="Logo de Compra Gamer" class="logoCompraGamer">    
+            </div>
+            <div class = "divTitulo">
+                <h1 class = "titulo">Gamer Zone</h1>
+                <p1 class = "alumnos">Lautaro Bordon - Matias Martina</p1>
+            </div>
+            <div class="divAlumnoActual">
+                <p1 id="nav_modificable"></p1>
+            </div>
+        </div>
+    </header>
+    <nav class = "navegacion">
+        <a href="index.html" class="linkInicio">Inicio</a>
+        <a href="productos.html" class="linkProductos">Productos</a>
+        <a href="carrito.html" class="linkCarrito">Carrito (<span id="contador-carrito">0</span>)</a>
+        <a href="Admin" class="linkAdmin">Admin</a>
+    </nav>
+    <main class="contenido-principal">
+        <input type="text" class="barra-busqueda" placeholder="Buscar producto...">
 
-    <!-- Header -->
-    <header class="header">
-
-        <a href="index.html">
-            <div class="logo">GamerZone</div>
-        </a>
-
-        <div class="nombreAlumno">
-            <nav id="nav_modificable"></nav>
+        <div class="filtros-categoria">
+            <button id="botonTodos">Todos</button>
+            <button id="botonPerifericos">Periféricos</button>
+            <button id="botonAudio">Audio</button>
         </div>
 
-        <input type="text" placeholder="Buscar..." class="barra-busqueda">
+        <div class="filtros-orden">
+            <button id="OrdenarAZ">A-Z</button>
+            <button id="OrdenarZA">Z-A</button>
+            <button id="botonMasMen">Precio: mayor a menor</button>
+            <button id="botonMenMas">Precio: menor a mayor</button>
+        </div>
 
-        <a href="carrito.html" class="link-carrito">
-            <div class="carrito">
-                <span>Carrito: <span id="contador-carrito">0</span> productos</span>
-            </div>
-        </a>
-    </header>
+        <div id="contenedor-productos"></div>
 
-
-    <!-- Contenedor principal -->
-    <main>
-        <section class="seccion-categorias">
-            <button id="botonPerifericos" class="boton-categoria">Mouses y Teclados</button>
-            <button id="botonAudio" class="boton-categoria">Audio</button>
-            <button id="botonTodos" class="boton-categoria">Ver todos</button>
-        </section>
-
-        <section class="seccion-productos">
-            <h2>Nuestros productos</h2>
-            <div class="botones-orden">
-                <button id="OrdenarAZ">Ordenar A-Z</button>
-                <button id="OrdenarZA">Ordenar Z-A</button>
-                <button id="botonMasMen">Precio menor-mayor</button>
-                <button id="botonMenMas">Precio mayor-menor</button>
-            </div>
-            <div id="contenedor-productos">
-            </div>
-
-            <div class="botones-paginacion">
-                <button id="paginaAnterior">Anterior</button>
-                <span id="numero-pagina">Página 1</span>
-                <button id="paginaSiguiente">Siguiente</button>
-            </div>
-        </section>
+        <div class="paginacion">
+            <button id="paginaAnterior">Anterior</button>
+            <span id="numero-pagina">Página 1</span>
+            <button id="paginaSiguiente">Siguiente</button>
+        </div>
     </main>
+    <footer>
+        <div class="footerMarca">
+        <h3>Gamer Zone</h3>
+        <p>Todo lo que necesitás para armar, mejorar y disfrutar tu setup.</p>
+    </div>
+
+    <div class="footerEnlaces">
+        <h4>Información</h4>
+
+        <a href="#">Quiénes somos</a>
+        <a href="#">Contactanos</a>
+        <a href="#">Preguntas frecuentes</a>
+    </div>
+
+    <div class="footerCreditos">
+        <p>
+            Proyecto académico desarrollado por Matías Martina y Lautaro Bordón
+            para la materia Programación III.
+        </p>
+
+        <p>© 2026 Gamer Zone. Todos los derechos reservados.</p>
+    </div>
+    </footer>
 
 </body>
-
 </html>

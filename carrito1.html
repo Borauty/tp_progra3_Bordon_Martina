@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos</title>
-    <script src="js/productos.js" defer></script>
-    <link rel="stylesheet" href="css/productos.css">
+    <title>Carrito</title>
+    <link rel="stylesheet" href="css/carrito.css">
 </head>
 <body>
     <header class = "encabezado">
@@ -17,41 +16,15 @@
                 <h1 class = "titulo">Gamer Zone</h1>
                 <p1 class = "alumnos">Lautaro Bordon - Matias Martina</p1>
             </div>
-            <div class="divAlumnoActual">
-                <p1 id="nav_modificable"></p1>
-            </div>
         </div>
     </header>
     <nav class = "navegacion">
         <a href="index.html" class="linkInicio">Inicio</a>
         <a href="productos.html" class="linkProductos">Productos</a>
-        <a href="carrito.html" class="linkCarrito">Carrito (<span id="contador-carrito">0</span>)</a>
+        <a href="carrito.html" class="linkCarrito">Carrito</a>
         <a href="Admin" class="linkAdmin">Admin</a>
     </nav>
-    <main class="contenido-principal">
-        <input type="text" class="barra-busqueda" placeholder="Buscar producto...">
-
-        <div class="filtros-categoria">
-            <button id="botonTodos">Todos</button>
-            <button id="botonPerifericos">Periféricos</button>
-            <button id="botonAudio">Audio</button>
-        </div>
-
-        <div class="filtros-orden">
-            <button id="OrdenarAZ">A-Z</button>
-            <button id="OrdenarZA">Z-A</button>
-            <button id="botonMasMen">Precio: mayor a menor</button>
-            <button id="botonMenMas">Precio: menor a mayor</button>
-        </div>
-
-        <div id="contenedor-productos"></div>
-
-        <div class="paginacion">
-            <button id="paginaAnterior">Anterior</button>
-            <span id="numero-pagina">Página 1</span>
-            <button id="paginaSiguiente">Siguiente</button>
-        </div>
-    </main>
+    <main></main>
     <footer>
         <div class="footerMarca">
         <h3>Gamer Zone</h3>

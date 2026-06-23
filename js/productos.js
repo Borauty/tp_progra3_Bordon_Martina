@@ -1,5 +1,4 @@
 function init() {
-    imprimirDatosAlumno(alumno);
     imprimirProductos(obtenerPaginaActual());
     botonesOrden();
     botonesCategoria();
@@ -7,19 +6,6 @@ function init() {
     actualizarCarrito(traerCarrito());
 }
 
-
-//Datos de los alumnos (se repite en todas las pantallas)
-/*
-const alumno = {
-    nombre: 'Martina',
-    apellido: 'Bordon'
-}
-
-function imprimirDatosAlumno(alumno1) {
-    let nav = document.getElementById("nav_modificable");
-    nav.innerHTML = `${alumno1.nombre} ${alumno1.apellido}`
-}
-/*/
 
 //Catalogo de productos (genérico, despues se reemplaza por los reales)
 //Se reusan imagenes viejas de fruta como placeholder visual
@@ -170,7 +156,7 @@ function botonesOrden() {
 }
 
 
-//Carrito (con cantidad, no como antes)
+//Carrito (con cantidad)
 
 function agregarEventosCarrito() {
     let botones = document.querySelectorAll(".boton-producto-carrito");

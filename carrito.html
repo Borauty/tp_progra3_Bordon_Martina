@@ -1,42 +1,35 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GamerZone - Carrito</title>
-    <link rel="icon" href="img/favicon.png">
+    <title>Carrito</title>
     <script src="js/carrito.js" defer></script>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/carrito.css">
 </head>
-
 <body>
-
-    <!-- Header -->
-    <header class="header">
-
-        <a href="index.html">
-            <div class="logo">GamerZone</div>
-        </a>
-
-        <div class="nombreAlumno">
-            <nav id="nav_modificable"></nav>
-        </div>
-
-        <a href="productos.html" class="link-carrito">
-            <div class="carrito">
-                <span>Volver a productos</span>
+    <header class = "encabezado">
+        <div class="divEncabezado">
+            <div class="divLogo">   
+                <img src="img/logo.png" alt="Logo de Compra Gamer" class="logoCompraGamer">    
             </div>
-        </a>
+            <div class = "divTitulo">
+                <h1 class = "titulo">Gamer Zone</h1>
+                <p1 class = "alumnos">Lautaro Bordon - Matias Martina</p1>
+            </div>
+        </div>
     </header>
-
-
-    <!-- Contenedor principal -->
+    <nav class = "navegacion">
+        <a href="index.html" class="linkInicio">Inicio</a>
+        <a href="productos.html" class="linkProductos">Productos</a>
+        <a href="carrito.html" class="linkCarrito">Carrito</a>
+        <a href="Admin" class="linkAdmin">Admin</a>
+    </nav>
     <main>
         <section class="seccion-carrito">
             <h2>Carrito</h2>
 
-            <div id="items-carrito">
+            <div class = "carrito-vacio" id="items-carrito">
                 <p>No hay elementos en el carrito.</p>
             </div>
 
@@ -59,7 +52,29 @@
             </div>
         </div>
     </main>
+    <footer>
+        <div class="footerMarca">
+        <h3>Gamer Zone</h3>
+        <p>Todo lo que necesitás para armar, mejorar y disfrutar tu setup.</p>
+    </div>
+
+    <div class="footerEnlaces">
+        <h4>Información</h4>
+
+        <a href="#">Quiénes somos</a>
+        <a href="#">Contactanos</a>
+        <a href="#">Preguntas frecuentes</a>
+    </div>
+
+    <div class="footerCreditos">
+        <p>
+            Proyecto académico desarrollado por Matías Martina y Lautaro Bordón
+            para la materia Programación III.
+        </p>
+
+        <p>© 2026 Gamer Zone. Todos los derechos reservados.</p>
+    </div>
+    </footer>
 
 </body>
-
 </html>

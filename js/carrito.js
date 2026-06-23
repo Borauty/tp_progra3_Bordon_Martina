@@ -1,19 +1,5 @@
 function init() {
-    imprimirDatosAlumno(alumno);
     mostrarCarrito(traerCarrito());
-}
-
-
-//Datos de los alumnos (se repite en todas las pantallas)
-
-const alumno = {
-    nombre: 'Martina',
-    apellido: 'Bordon'
-}
-
-function imprimirDatosAlumno(alumno1) {
-    let nav = document.getElementById("nav_modificable");
-    nav.innerHTML = `${alumno1.nombre} ${alumno1.apellido}`
 }
 
 
@@ -36,13 +22,15 @@ function mostrarCarrito(carrito) {
     if (carrito.length > 0) {
         for (let index = 0; index < carrito.length; index++) {
             items_carrito.innerHTML +=
-                `<li class="bloque-item">
-            <p class="nombre-item">${carrito[index].nombre} - $${carrito[index].precio}</p>
-            <button class="boton-restar" data-id="${carrito[index].id}">-</button>
-            <span class="cantidad-item">${carrito[index].cantidad}</span>
-            <button class="boton-sumar" data-id="${carrito[index].id}">+</button>
-            <button class="boton-eliminar" data-id="${carrito[index].id}">Eliminar</button>
-            </li>`
+                `<div class="item-carrito">
+                <p class="nombre-item">${carrito[index].nombre} - $${carrito[index].precio}</p>
+                <div class="controles-cantidad">
+                    <button class="boton-restar" data-id="${carrito[index].id}">-</button>
+                    <span class="cantidad-item">${carrito[index].cantidad}</span>
+                    <button class="boton-sumar" data-id="${carrito[index].id}">+</button>
+                </div>
+                <button class="boton-eliminar" data-id="${carrito[index].id}">Eliminar</button>
+                </div>`
             acumulador_carrito += carrito[index].precio * carrito[index].cantidad
         }
         agregarEventosCantidad();

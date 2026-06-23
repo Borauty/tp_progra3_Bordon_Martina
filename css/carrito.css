@@ -194,9 +194,9 @@ main {
 }
 
 .item-carrito {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 150px 100px;
     align-items: center;
-    justify-content: space-between;
     gap: 10px;
     border: 2px solid var(--coral);
     padding: 6px;
@@ -254,6 +254,17 @@ main {
     border-color: var(--rosa);
 }
 
+.item-carrito .nombre-item {
+    margin: 0;
+}
+
+.item-carrito .controles-cantidad {
+    justify-content: center;
+}
+
+.item-carrito .boton-eliminar {
+    justify-self: center;
+}
 /* MODAL */
 
 .modal-oculto {

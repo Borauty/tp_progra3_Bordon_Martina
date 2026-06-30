@@ -1,9 +1,12 @@
 import express from "express";
 import connection from "./database/db.js" ;
 import environments from "./config/environments.js";
+import cors from "cors";
 
 const PORT = environments.port;
 const app = express();
+app.use(cors());
+
 
 app.get("/", (req, res) => {
     res.send("Hola mundo!");

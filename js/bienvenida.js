@@ -33,3 +33,4 @@ function continuarCompra() {
 function guardarNombreCliente(nombre) {
     localStorage.setItem("nombreCliente", nombre);
 }
+

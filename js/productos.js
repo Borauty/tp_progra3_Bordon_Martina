@@ -1,4 +1,5 @@
-function init() {
+async function init() {
+    await cargarProductos();
     imprimirProductos(obtenerPaginaActual());
     botonesOrden();
     botonesCategoria();
@@ -6,26 +7,27 @@ function init() {
     actualizarCarrito(traerCarrito());
 }
 
+//Catalogo de productos: ahora se trae desde el backend (MySQL via API)
 
-//Catalogo de productos (genérico, despues se reemplaza por los reales)
-//Se reusan imagenes viejas de fruta como placeholder visual
+let productos_catalogo = [];
+let productos_filtrados = [];
 
-let productos_catalogo = [
-    { id: 1, nombre: "Mouse Gamer RGB X1", precio: 15000, categoria: "perifericos", ruta_img: "img/anana.jpg", activo: true },
-    { id: 2, nombre: "Mouse Gamer Inalambrico Z2", precio: 22000, categoria: "perifericos", ruta_img: "img/arandano.jpg", activo: true },
-    { id: 3, nombre: "Teclado Mecanico TK-Pro", precio: 38000, categoria: "perifericos", ruta_img: "img/banana.jpg", activo: true },
-    { id: 4, nombre: "Teclado Mecanico Compacto 60%", precio: 29000, categoria: "perifericos", ruta_img: "img/frambuesa.png", activo: true },
-    { id: 5, nombre: "Mouse Gamer Ultraliviano W3", precio: 18500, categoria: "perifericos", ruta_img: "img/frutilla.jpg", activo: true },
-    { id: 6, nombre: "Teclado Gamer Membrana K200", precio: 14000, categoria: "perifericos", ruta_img: "img/kiwi.jpg", activo: true },
-    { id: 7, nombre: "Auriculares Gamer 7.1 SoundX", precio: 32000, categoria: "audio", ruta_img: "img/mandarina.jpg", activo: true },
-    { id: 8, nombre: "Microfono Condensador StreamCast", precio: 45000, categoria: "audio", ruta_img: "img/manzana.jpg", activo: true },
-    { id: 9, nombre: "Parlantes Gamer 2.1 BassBoost", precio: 27000, categoria: "audio", ruta_img: "img/naranja.jpg", activo: true },
-    { id: 10, nombre: "Auriculares Inalambricos NightOwl", precio: 39000, categoria: "audio", ruta_img: "img/pera.jpg", activo: true },
-    { id: 11, nombre: "Microfono USB PodCast Mini", precio: 21000, categoria: "audio", ruta_img: "img/pomelo-amarillo.jpg", activo: true },
-    { id: 12, nombre: "Parlantes Compactos Desktop S1", precio: 16000, categoria: "audio", ruta_img: "img/pomelo-rojo.jpg", activo: true }
-];
+async function cargarProductos() {
+    const respuesta = await fetch("http://localhost:4000/api/products");
+    const data = await respuesta.json();
 
-let productos_filtrados = productos_catalogo.filter(producto => producto.activo);
+    // Transformamos los datos para que coincidan con los nombres que usa nuestro código
+    productos_catalogo = data.payload.map(producto => ({
+        id: producto.id,
+        nombre: producto.name,
+        precio: Number(producto.price),
+        categoria: producto.category,
+        ruta_img: producto.image,
+        activo: producto.active === 1
+    }));
+
+    productos_filtrados = productos_catalogo.filter(producto => producto.activo);
+}
 
 
 //Paginacion
@@ -93,10 +95,10 @@ function botonesCategoria() {
     let boton_todos = document.getElementById("botonTodos");
 
     boton_perifericos.addEventListener("click", Event => {
-        productos_filtrados = productos_catalogo.filter(producto => producto.activo && producto.categoria == "perifericos");
-        pagina_actual = 1;
-        imprimirProductos(obtenerPaginaActual());
-        actualizarNumeroPagina();
+    productos_filtrados = productos_catalogo.filter(producto => producto.activo && producto.categoria == "mouse_teclado");
+    pagina_actual = 1;
+    imprimirProductos(obtenerPaginaActual());
+    actualizarNumeroPagina();
     })
 
     boton_audio.addEventListener("click", Event => {

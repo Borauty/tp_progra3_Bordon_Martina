@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Borauty/tp_progra3_Bordon_Martina#readme",
   "dependencies": {
+    "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "ejs": "^6.0.1",
     "express": "^5.2.1",

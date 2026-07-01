@@ -17,7 +17,7 @@ app.listen(PORT, () => {
     console.log(`Servidor corriendo en el puerto ${PORT}`);
 });
 
-
+// GET ALL
 app.get("/api/products", async (req, res) =>{
 
     try {
@@ -32,3 +32,30 @@ app.get("/api/products", async (req, res) =>{
     }
 
 })
+//GET por ID
+app.get("/api/products/:id", async (req, res) => {
+    try {
+        const { id } = req.params;
+
+        const [rows] = await connection.query(
+            "SELECT * FROM products WHERE id = ?",
+            [id]
+        );
+
+        if (rows.length === 0) {
+            return res.status(404).json({
+                mensaje: "Producto no encontrado"
+            });
+        }
+
+        res.status(200).json({
+            payload: rows[0]
+        });
+
+    } catch (error) {
+        console.error("Error obteniendo producto por id: ", error.message);
+        res.status(500).json({
+            mensaje: "Error interno del servidor"
+        });
+    }
+});

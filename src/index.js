@@ -7,7 +7,8 @@ const PORT = environments.port;
 const app = express();
 //Middleware basico para permitir que el servidor pueda recibir y procesar peticiones con contenido en formato JSON
 app.use(cors());
-
+//Middleware para parsear a JSON el cuerpo de las solicitudes POST y PUT.
+app.use(express.json());
 
 app.get("/", (req, res) => {
     res.send("Hola mundo!");
@@ -56,6 +57,28 @@ app.get("/api/products/:id", async (req, res) => {
         console.error("Error obteniendo producto por id: ", error.message);
         res.status(500).json({
             mensaje: "Error interno del servidor"
+        });
+    }
+});
+
+// POST - Crear producto
+app.post("/api/products/", async (req, res) => {
+    try {
+        const { name, image, category, price } = req.body;
+
+        await connection.query(
+            "INSERT INTO products (name, image, category, price) VALUES (?, ?, ?, ?)",
+            [name, image, category, price]
+        );
+
+        res.status(201).json({
+            message: "Producto creado correctamente"
+        });
+
+    } catch (error) {
+        console.error("Error al crear el producto: ", error.message);
+        res.status(500).json({
+            message: "Error al crear el producto"
         });
     }
 });

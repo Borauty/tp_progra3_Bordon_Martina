@@ -82,3 +82,31 @@ app.post("/api/products/", async (req, res) => {
         });
     }
 });
+
+app.delete("/api/products/:id", async (req, res) => {
+    try {
+        const { id } = req.params;
+
+        const [result] = await connection.query(
+            "DELETE FROM products WHERE id = ?",
+            [id]
+        );
+
+        if (result.affectedRows === 0) {
+            return res.status(404).json({
+                message: "Producto no encontrado"
+            });
+        }
+
+        res.status(200).json({
+            message: `Producto con id ${id} eliminado exitosamente`
+        });
+
+    } catch (error) {
+        console.error("Error al eliminar producto:", error.message);
+
+        res.status(500).json({
+            message: "Error interno al eliminar el producto"
+        });
+    }
+});

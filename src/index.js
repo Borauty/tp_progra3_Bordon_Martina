@@ -109,7 +109,6 @@ app.delete("/api/products/:id", async (req, res) => {
             message: "Error interno al eliminar el producto"
         });
     }
-<<<<<<< HEAD
 });
 // PUT - Actualizar producto
 app.put("/api/products", async (req, res) => {
@@ -129,6 +128,4 @@ app.put("/api/products", async (req, res) => {
     } catch (error) {
         console.log(error);
     }
-=======
->>>>>>> 3ea33db7302a3e02a2c144ae0cecdb4e65c9bf50
 });

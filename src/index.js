@@ -83,10 +83,6 @@ app.post("/api/products/", async (req, res) => {
     }
 });
 
-<<<<<<< HEAD
-//Delete - Eliminar producto
-=======
->>>>>>> 3ea33db7302a3e02a2c144ae0cecdb4e65c9bf50
 app.delete("/api/products/:id", async (req, res) => {
     try {
         const { id } = req.params;

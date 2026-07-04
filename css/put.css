@@ -1,0 +1,264 @@
+/* =========================
+   NAV ADMIN
+========================= */
+
+.navegacionAdmin {
+    display: flex;
+    width: 100%;
+    border: 3px solid var(--violeta);
+}
+
+.navegacionAdmin a {
+    flex: 1;
+    padding: 3px 6px;
+    border: 3px solid var(--violeta);
+
+    color: var(--texto-principal);
+    background-color: var(--fondo-caja) !important;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navegacionAdmin a:hover {
+    background-color: var(--rosa) !important;
+}
+
+.botonAdminActivo {
+    background-color: var(--violeta) !important;
+    font-weight: bold;
+}
+
+/* =========================
+   FORMULARIO BUSCAR PRODUCTO
+========================= */
+
+.form-productos {
+    width: 90%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 15px;
+
+    border: 3px solid var(--celeste);
+    background-color: var(--fondo-caja) !important;
+}
+
+.form-productos h2 {
+    margin-top: 0;
+    color: var(--celeste);
+    text-align: center;
+}
+
+.form-productos form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-productos label {
+    width: 100%;
+    color: var(--texto-secundario);
+    font-size: 14px;
+    text-align: center;
+}
+
+.form-productos input[type="text"],
+.form-productos input[type="number"],
+.form-productos select {
+    width: 150px;
+    padding: 8px;
+    box-sizing: border-box;
+
+    border: 3px solid var(--celeste);
+    border-radius: 5px;
+    background-color: var(--fondo-input) !important;
+    color: var(--texto-principal);
+}
+
+.form-productos input[type="submit"] {
+    padding: 8px 16px;
+    border: 0;
+    border-radius: 5px;
+
+    background-color: var(--violeta) !important;
+    color: var(--texto-principal);
+    cursor: pointer;
+}
+
+.form-productos input[type="submit"]:hover {
+    background-color: var(--rosa) !important;
+}
+
+/* =========================
+   SECCIÓN RESULTADO
+========================= */
+
+.seccion-productos {
+    width: 90%;
+    margin: 20px auto;
+}
+
+.seccion-productos h2 {
+    color: var(--celeste);
+    text-align: center;
+}
+
+/* CAJA GRANDE */
+
+.resultado-wrapper {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+    width: 100%;
+}
+
+/* CAJA RESULTADO Y CAJA FORMULARIO */
+
+#resultado,
+#contenedorForm {
+    flex: 1;
+    min-width: 0;
+    padding: 20px;
+    box-sizing: border-box;
+
+    border: 3px solid var(--violeta);
+    background-color: var(--fondo-caja) !important;
+}
+
+#resultado h2,
+#contenedorForm h2 {
+    margin-top: 0;
+    color: var(--celeste);
+    text-align: center;
+}
+
+/* EVITA QUE EL PRODUCTO SE SALGA DE RESULTADO */
+
+#contenedor-productos,
+#contenedor-productos > * {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+#resultado img {
+    display: block;
+    width: 200px;
+    max-width: 100%;
+    height: 200px;
+    margin: 0 auto 15px;
+
+    object-fit: contain;
+}
+
+/* =========================
+   FORMULARIO ACTUALIZAR
+========================= */
+
+#contenedorForm form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#contenedorForm label {
+    display: block;
+    margin-top: 5px;
+    color: var(--texto-secundario);
+}
+
+#contenedorForm input[type="text"],
+#contenedorForm input[type="number"],
+#contenedorForm select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+
+    border: 3px solid var(--celeste);
+    border-radius: 5px;
+    background-color: var(--fondo-input) !important;
+    color: var(--texto-principal);
+}
+
+/* Si el input está dentro del label */
+
+#contenedorForm label input,
+#contenedorForm label select {
+    display: block;
+    margin-top: 6px;
+}
+
+/* BOTÓN CENTRADO */
+
+#contenedorForm input[type="submit"],
+#contenedorForm input[type="button"],
+#contenedorForm button {
+    align-self: center;
+    width: fit-content;
+    margin-top: 10px;
+    padding: 10px 16px;
+
+    border: 0;
+    border-radius: 5px;
+    background-color: var(--violeta) !important;
+    color: var(--texto-principal);
+
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#contenedorForm input[type="submit"]:hover,
+#contenedorForm input[type="button"]:hover,
+#contenedorForm button:hover {
+    background-color: var(--rosa) !important;
+}
+/* =========================
+   PRODUCTO MOSTRADO EN RESULTADO
+========================= */
+
+#contenedor-productos {
+    margin-top: 15px;
+}
+
+#contenedor-productos .lista-producto {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border: 3px solid var(--celeste);
+    border-radius: 5px;
+    background-color: var(--fondo-input) !important;
+}
+
+#contenedor-productos .lista-producto p {
+    width: 100%;
+    margin: 5px 0;
+
+    color: var(--texto-principal);
+    text-align: center;
+}
+
+#updateProduct-button {
+    margin-top: 15px;
+    padding: 10px 16px;
+
+    border: 0;
+    border-radius: 5px;
+    background-color: var(--violeta) !important;
+    color: var(--texto-principal);
+
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#updateProduct-button:hover {
+    background-color: var(--rosa) !important;
+}

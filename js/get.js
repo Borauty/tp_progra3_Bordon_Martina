@@ -22,14 +22,7 @@ getProductForm.addEventListener("submit", async event => {
         const producto = datos.payload;
 
         console.log(producto);
-        /* {
-            "id": 41,
-            "name": "Fernet Cola Chabona",
-            "image": "https://...",
-            "category": "drink",
-            "price": "4300.00",
-            "active": 1
-        }*/
+        
 
         renderizarProducto(producto);
 

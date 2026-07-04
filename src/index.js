@@ -82,3 +82,51 @@ app.post("/api/products/", async (req, res) => {
         });
     }
 });
+
+//Delete - Eliminar producto
+app.delete("/api/products/:id", async (req, res) => {
+    try {
+        const { id } = req.params;
+
+        const [result] = await connection.query(
+            "DELETE FROM products WHERE id = ?",
+            [id]
+        );
+
+        if (result.affectedRows === 0) {
+            return res.status(404).json({
+                message: "Producto no encontrado"
+            });
+        }
+
+        res.status(200).json({
+            message: `Producto con id ${id} eliminado exitosamente`
+        });
+
+    } catch (error) {
+        console.error("Error al eliminar producto:", error.message);
+
+        res.status(500).json({
+            message: "Error interno al eliminar el producto"
+        });
+    }
+});
+// PUT - Actualizar producto
+app.put("/api/products", async (req, res) => {
+
+    try {
+        // Con el destructuring, recibimos todos los datos del producto
+        const { id, name, image, category, price, active } = req.body;
+
+        const sql = "UPDATE products SET name = ?, image = ?, category = ?, price = ?, active = ? WHERE id = ?";
+
+        await connection.query(sql, [name, image, category, price, active, id]);
+
+        return res.status(200).json({
+            message: "Producto actualizado correctamente"
+        });
+
+    } catch (error) {
+        console.log(error);
+    }
+});

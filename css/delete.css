@@ -88,6 +88,13 @@
     color: var(--celeste);
     text-align: center;
 }
+
+/* Sobreescribimos el grid de 3 columnas de productos.css: */
+/* acá solo se muestra 1 producto, no hace falta grid */
+#contenedor-productos {
+    display: block;
+}
+
 /* RESULTADO - LISTA PRODUCTO */
 
 .lista-producto {

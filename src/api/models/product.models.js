@@ -1,14 +1,14 @@
 import connection from "../database/db.js";
 
 const selectAllProducts = () => {
-    const sql = "SELECT id, name, price, image FROM products";
+    const sql = "SELECT id, name, price, image, category, active FROM products";
 
     return connection.query(sql);
 }
 
 
 const selectProductById = (id) => {
-    const sql = "SELECT id, name, price, image FROM products where products.id = ?";
+    const sql = "SELECT id, name, price, image, category, active FROM products where products.id = ?";
     return connection.query(sql, [id]);
 }
 

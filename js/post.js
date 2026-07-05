@@ -22,6 +22,11 @@ postProductForm.addEventListener("submit", async event => {
 
     // Transformamos este objeto nativo en un objeto JavaScript normal
     const data = Object.fromEntries(formData.entries());
+
+    // FormData convierte todo a string, pero el backend espera price y active como number
+    data.price = Number(data.price);
+    data.active = Number(data.active);
+
     console.log(data);
     // La idea de esto es poder parsear este objeto como JSON en el body de la peticion
     

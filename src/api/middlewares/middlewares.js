@@ -12,6 +12,7 @@ export const validateId = (req, res, next) => {
 
 };
 
+const categoriasValidas = ["mouse_teclado", "audio"];
 
 export const validateProduct = (req, res, next) => {
 
@@ -24,10 +25,12 @@ export const validateProduct = (req, res, next) => {
         errores.push("El nombre debe tener al menos 2 caracteres");
     }
 
-    const price1 = parseInt(price)
-
     if (!Number.isFinite(price) || price <= 0) {
         errores.push("El precio debe ser un numero mayor a 0");
+    }
+
+    if (!categoriasValidas.includes(category)) {
+        errores.push("Categoria invalida");
     }
 
     if (errores.length > 0) {

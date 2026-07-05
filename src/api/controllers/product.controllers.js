@@ -7,7 +7,14 @@ export const getAllProducts = async (req, res) => {
 
         const [rows] = await productModel.selectAllProducts();
 
+        if (rows.length === 0) {
+            return res.status(404).json({
+                message: "No se encontraron productos"
+            });
+        }
+
         res.status(200).json({
+            total: rows.length,
             payload: rows
         });
 
@@ -74,14 +81,24 @@ export const modifyProduct = async (req, res) => {
         // Con el destructuring, recibimos todos los datos del producto
         const { id, name, image, category, price, active } = req.body;
 
-        await productModel.updateProduct(name, image, category, price, active, id);
+        const [result] = await productModel.updateProduct(name, image, category, price, active, id);
+
+        if (result.affectedRows === 0) {
+            return res.status(404).json({
+                message: "Producto no encontrado"
+            });
+        }
 
         return res.status(200).json({
             message: "Producto actualizado correctamente"
         });
 
     } catch (error) {
-        console.log(error);
+        console.error("Error al actualizar el producto:", error.message);
+
+        res.status(500).json({
+            message: "Error interno al actualizar el producto"
+        });
     }
 };
 

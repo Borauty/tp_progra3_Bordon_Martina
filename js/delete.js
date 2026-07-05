@@ -1,9 +1,5 @@
 const contenedorProductos = document.getElementById("contenedor-productos");
-<<<<<<< HEAD
-const getProductForm = document.getElementById("FormularioEliminar");
-=======
 const getProductForm = document.getElementById("getProductForm");
->>>>>>> 3ea33db7302a3e02a2c144ae0cecdb4e65c9bf50
 
 getProductForm.addEventListener("submit", async event => {
     event.preventDefault(); // Evitamos el envío por defecto del formulario

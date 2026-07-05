@@ -88,30 +88,34 @@ function formularioPutProducto(event, producto) {
 
     const postProductForm = document.getElementById("postProduct-form");
 
-    postProductForm.addEventListener("submit", async event => {
-        event.preventDefault();
+    // En vez de escribir la función acá adentro, la registramos por nombre
+    postProductForm.addEventListener("submit", actualizarProducto);
+}
 
-        const formData = new FormData(event.target);
-        const data = Object.fromEntries(formData.entries());
+// Envío de datos del formulario de actualización de producto
+async function actualizarProducto(event) {
+    event.preventDefault(); // Evitamos el envío por defecto del formulario
 
-        try {
-            const response = await fetch("http://localhost:4000/api/products", {
-                method: "PUT",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(data)
-            });
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData.entries());
 
-            const result = await response.json();
-            alert(result.message);
+    try {
+        const response = await fetch("http://localhost:4000/api/products", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
 
-            contenedorProductos.innerHTML = "";
-            contenedorForm.innerHTML = "";
+        const result = await response.json();
+        alert(result.message);
 
-        } catch (error) {
-            console.error("Error al actualizar el producto:", error);
-            alert("Ocurrió un error al actualizar el producto.");
-        }
-    });
+        contenedorProductos.innerHTML = "";
+        contenedorForm.innerHTML = "";
+
+    } catch (error) {
+        console.error("Error al actualizar el producto:", error);
+        alert("Ocurrió un error al actualizar el producto.");
+    }
 }

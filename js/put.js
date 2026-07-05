@@ -78,6 +78,12 @@ function formularioPutProducto(event, producto) {
             <label for="priceProd">Precio</label>
             <input type="number" name="price" id="priceProd" value="${producto.price}" required>
 
+            <label for="activeProd">Estado</label>
+            <select name="active" id="activeProd" required>
+                <option value="1" ${producto.active === 1 ? "selected" : ""}>Activo</option>
+                <option value="0" ${producto.active === 0 ? "selected" : ""}>Inactivo</option>
+            </select>
+
             <div>
                 <input type="submit" value="Actualizar producto">
             </div>
@@ -99,6 +105,10 @@ async function actualizarProducto(event) {
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData.entries());
 
+    // FormData convierte todo a string, pero el backend espera price y active como number
+    data.price = Number(data.price);
+    data.active = Number(data.active);
+
     try {
         const response = await fetch("http://localhost:4000/api/products", {
             method: "PUT",
@@ -109,10 +119,16 @@ async function actualizarProducto(event) {
         });
 
         const result = await response.json();
-        alert(result.message);
 
-        contenedorProductos.innerHTML = "";
-        contenedorForm.innerHTML = "";
+        if (response.ok) {
+            alert(result.message);
+
+            contenedorProductos.innerHTML = "";
+            contenedorForm.innerHTML = "";
+        } else {
+            console.error("Error:", result.message);
+            alert(result.message);
+        }
 
     } catch (error) {
         console.error("Error al actualizar el producto:", error);

@@ -141,4 +141,5 @@
 
 #updateProduct-button:hover {
     background-color: var(--rosa) !important;
-}
+    background-color: var(--celeste) !important;
+}   

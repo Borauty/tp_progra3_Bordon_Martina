@@ -145,6 +145,12 @@
     box-sizing: border-box;
 }
 
+/* Sobreescribimos el grid de 3 columnas de productos.css: */
+/* acá solo se muestra 1 producto, no hace falta grid */
+#contenedor-productos {
+    display: block;
+}
+
 #resultado img {
     display: block;
     width: 200px;

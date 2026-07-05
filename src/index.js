@@ -1,8 +1,8 @@
 import express from "express";
-import connection from "./database/db.js" ;
-import environments from "./config/environments.js";
+import connection from "./api/database/db.js" ;
+import environments from "./api/config/environments.js";
 import cors from "cors";
-import productRoutes from "./routes/product.routes.js"
+import productRoutes from "./api/routes/product.routes.js"
 
 const PORT = environments.port;
 const app = express();

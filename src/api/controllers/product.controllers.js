@@ -1,12 +1,11 @@
 import connection from "../database/db.js";
+import productModel from "../models/product.models.js";
 
 export const getAllProducts = async (req, res) => {
 
     try {
 
-        const [rows] = await connection.query(
-            "SELECT * FROM products"
-        );
+        const [rows] = await productModel.selectAllProducts();
 
         res.status(200).json({
             payload: rows
@@ -29,10 +28,7 @@ export const getProductById = async (req, res) => {
     try {
         const { id } = req.params;
 
-        const [rows] = await connection.query(
-            "SELECT * FROM products WHERE id = ?",
-            [id]
-        );
+        const [rows] = await productModel.selectProductById(id);
 
         if (rows.length === 0) {
             return res.status(404).json({
@@ -57,10 +53,7 @@ export const createProduct = async (req, res) => {
     try {
         const { name, image, category, price } = req.body;
 
-        await connection.query(
-            "INSERT INTO products (name, image, category, price) VALUES (?, ?, ?, ?)",
-            [name, image, category, price]
-        );
+        await productModel.insertProduct(name, image, category, price);
 
         res.status(201).json({
             message: "Producto creado correctamente"
@@ -81,9 +74,7 @@ export const modifyProduct = async (req, res) => {
         // Con el destructuring, recibimos todos los datos del producto
         const { id, name, image, category, price, active } = req.body;
 
-        const sql = "UPDATE products SET name = ?, image = ?, category = ?, price = ?, active = ? WHERE id = ?";
-
-        await connection.query(sql, [name, image, category, price, active, id]);
+        await productModel.updateProduct(name, image, category, price, active, id);
 
         return res.status(200).json({
             message: "Producto actualizado correctamente"
@@ -98,10 +89,7 @@ export const removeProduct = async (req, res) => {
     try {
         const { id } = req.params;
 
-        const [result] = await connection.query(
-            "DELETE FROM products WHERE id = ?",
-            [id]
-        );
+        const [result] = await productModel.deleteProduct(id);
 
         if (result.affectedRows === 0) {
             return res.status(404).json({

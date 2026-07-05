@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket</title>
+    <script src="js/ticket.js" defer></script>
+     <link rel="stylesheet" href="css/productos.css">
+    <link rel="stylesheet" href="css/ticket.css">
+</head>
+<body>
+    <header class = "encabezado">
+        <div class="divEncabezado">
+            <div class="divLogo">   
+                <img src="img/logo.png" alt="Logo de Compra Gamer" class="logoCompraGamer">    
+            </div>
+            <div class = "divTitulo">
+                <h1 class = "titulo">Gamer Zone</h1>
+                <p1 class = "alumnos">Lautaro Bordon - Matias Martina</p1>
+            </div>
+        </div>
+    </header>
+    <nav class = "navegacion">
+        <a href="index.html" class="linkInicio">Inicio</a>
+        <a href="productos.html" class="linkProductos">Productos</a>
+        <a href="carrito.html" class="linkCarrito">Carrito</a>
+        <a href="admin.html" class="linkAdmin">Admin</a>
+    </nav>
+    <main>
+        <section class="seccion-ticket">
+            <div id="ticket" class="ticket">
+                <h2>Gamer Zone</h2>
+                <p class="ticket-fecha" id="ticketFecha"></p>
+                <p class="ticket-usuario">Cliente: <span id="ticketUsuario"></span></p>
+                <hr>
+                <div id="ticketProductos"></div>
+                <hr>
+                <h3 id="ticketTotal" class="total"></h3>
+            </div>
+
+            <div class="botones-ticket">
+                <button id="descargar-pdf">Descargar PDF</button>
+                <button id="salir-ticket">Salir</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footerMarca">
+        <h3>Gamer Zone</h3>
+        <p>Todo lo que necesitás para armar, mejorar y disfrutar tu setup.</p>
+    </div>
+
+    <div class="footerEnlaces">
+        <h4>Información</h4>
+
+        <a href="#">Quiénes somos</a>
+        <a href="#">Contactanos</a>
+        <a href="#">Preguntas frecuentes</a>
+    </div>
+
+    <div class="footerCreditos">
+        <p>
+            Proyecto académico desarrollado por Matías Martina y Lautaro Bordón
+            para la materia Programación III.
+        </p>
+
+        <p>© 2026 Gamer Zone. Todos los derechos reservados.</p>
+    </div>
+    </footer>
+
+</body>
+</html>

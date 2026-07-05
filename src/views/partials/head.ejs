@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= titulo %></title>
+    <script src="/js/<%= script %>" defer></script>
+    <link rel="stylesheet" href="/css/productos.css">
+    <% cssExtra.forEach(archivo => { %>
+        <link rel="stylesheet" href="/css/<%= archivo %>">
+    <% }) %>
+</head>
+<body>
+    <header class="encabezado">
+        <div class="divEncabezado">
+            <div class="divLogo">   
+                <img src="/img/logo.png" alt="Logo de Compra Gamer" class="logoCompraGamer">    
+            </div>
+            <div class="divTitulo">
+                <h1 class="titulo">Gamer Zone</h1>
+                <p1 class="alumnos">Lautaro Bordon - Matias Martina</p1>
+            </div>
+        </div>
+    </header>
+    <nav class="navegacion">
+        <a href="/" class="linkInicio">Inicio</a>
+        <a href="/productos" class="linkProductos">Productos</a>
+        <a href="/carrito" class="linkCarrito">Carrito (<span id="contador-carrito">0</span>)</a>
+        <a href="/admin" class="linkAdmin">Admin</a>
+    </nav>

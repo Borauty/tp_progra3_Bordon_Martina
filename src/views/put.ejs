@@ -1,0 +1,25 @@
+<%- include("partials/head.ejs", { titulo: "Admin - Modificar", script: "put.js", cssExtra: ["put.css"] }) %>
+<%- include("partials/navAdmin.ejs", { activo: "modificar" }) %>
+
+<main class="contenido-principal">
+    <section class="form-productos">
+        <h2>Buscar producto para modificar</h2>
+        <form id="getProduct-form">
+            <label for="idProd">Id del producto</label>
+            <input type="number" name="idProd" id="idProd" required>
+            <input type="submit" value="Consultar producto">
+        </form>
+    </section>
+
+    <section class="seccion-productos">
+        <div class="resultado-wrapper">
+            <div id="resultado">     
+                <h2>Resultado</h2>
+                <div id="contenedor-productos"></div>
+            </div>
+            <div id="contenedorForm"></div>
+        </div>
+    </section>
+</main>
+
+<%- include("partials/footer.ejs") %>

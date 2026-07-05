@@ -1,0 +1,35 @@
+<%- include("partials/head.ejs", { titulo: "Admin - Crear", script: "post.js", cssExtra: ["admin.css", "post.css"] }) %>
+<%- include("partials/navAdmin.ejs", { activo: "crear" }) %>
+
+<main class="contenido-principal">
+    <section class="form-productos">
+        <h2>Crear producto</h2>
+
+        <form id="FormularioPost">
+            <label for="nameProd">Nombre</label>
+            <input type="text" name="name" id="nameProd" required>
+
+            <label for="imageProd">Imagen</label>
+            <input type="text" name="image" id="imageProd" required>
+
+            <label for="categoryProd">Categoría</label>
+            <select name="category" id="categoryProd" required>
+                <option value="mouse_teclado">Periféricos</option>
+                <option value="audio">Audio</option>
+            </select>
+
+            <label for="priceProd">Precio</label>
+            <input type="number" name="price" id="priceProd" required>
+
+            <label for="activeProd">Estado</label>
+            <select name="active" id="activeProd" required>
+                <option value="1" selected>Activo</option>
+                <option value="0">Inactivo</option>
+            </select>
+
+            <input type="submit" value="Alta producto">
+        </form>
+    </section>
+</main>
+
+<%- include("partials/footer.ejs") %>

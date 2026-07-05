@@ -1,0 +1,11 @@
+<%- include("partials/head.ejs", { titulo: "Admin", script: "admin.js", cssExtra: ["admin.css"] }) %>
+<%- include("partials/navAdmin.ejs", { activo: "ver" }) %>
+
+<main class="contenido-principal">
+    <section class="seccion-productos">
+        <h2 class="titulo-seccion">Nuestros productos</h2>
+        <div id="contenedor-productos"></div>
+    </section>
+</main>
+
+<%- include("partials/footer.ejs") %>

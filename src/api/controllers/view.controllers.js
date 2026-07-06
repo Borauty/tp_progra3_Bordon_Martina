@@ -42,3 +42,14 @@ export const renderDelete = (req, res) => {
         activo: "eliminar"
     });
 };
+
+export const renderLogin = (req, res) => {
+
+    res.render("login", {
+        titulo: "Login",
+        script: "login.js",
+        cssExtra: ["login.css"]
+    });
+
+};
+

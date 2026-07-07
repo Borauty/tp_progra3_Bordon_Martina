@@ -1,13 +1,11 @@
 import { Router } from "express";
 import { renderAdmin, renderGet, renderPost, renderPut, renderDelete, renderLogin } from "../controllers/view.controllers.js";
-
+import { requireLogin } from "../middlewares/middlewares.js";
 const router = Router();
-
-router.get("/", renderAdmin);
-router.get("/consultar", renderGet);
-router.get("/crear", renderPost);
-router.get("/modificar", renderPut);
-router.get("/eliminar", renderDelete);
+router.get("/", requireLogin, renderAdmin);
+router.get("/consultar", requireLogin, renderGet);
+router.get("/crear", requireLogin, renderPost);
+router.get("/modificar", requireLogin, renderPut);
+router.get("/eliminar", requireLogin, renderDelete);
 router.get("/login", renderLogin);
-
 export default router;

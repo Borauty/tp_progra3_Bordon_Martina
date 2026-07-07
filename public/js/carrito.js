@@ -104,11 +104,30 @@ function vaciarCarrito(carrito) {
 }
 
 let bot_vaciar_carrito = document.getElementById("vaciar-carrito");
+let modal_vaciar = document.getElementById("modal-vaciar");
+let boton_vaciar_si = document.getElementById("boton-vaciar-si");
+let boton_vaciar_no = document.getElementById("boton-vaciar-no");
+
 bot_vaciar_carrito.addEventListener("click", Event => {
-    let carrito = vaciarCarrito(traerCarrito());
-    mostrarCarrito(carrito)
+    let carrito = traerCarrito();
+    if (carrito.length == 0) {
+        return;
+    }
+    modal_vaciar.classList.remove("modal-oculto");
+    modal_vaciar.classList.add("modal-visible");
 })
 
+boton_vaciar_no.addEventListener("click", Event => {
+    modal_vaciar.classList.remove("modal-visible");
+    modal_vaciar.classList.add("modal-oculto");
+})
+
+boton_vaciar_si.addEventListener("click", Event => {
+    let carrito = vaciarCarrito(traerCarrito());
+    mostrarCarrito(carrito);
+    modal_vaciar.classList.remove("modal-visible");
+    modal_vaciar.classList.add("modal-oculto");
+})
 
 //Finalizar compra (con modal de confirmacion)
 
@@ -130,7 +149,6 @@ boton_confirmar_no.addEventListener("click", Event => {
     modal_confirmar.classList.remove("modal-visible");
     modal_confirmar.classList.add("modal-oculto");
 })
-
 boton_confirmar_si.addEventListener("click", async Event => {
     let carrito = traerCarrito();
 

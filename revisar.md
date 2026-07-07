@@ -2,6 +2,9 @@ revisar id, cuando creamos uno nuevo con id "14" y lo eliminamos, tendriamos que
 
 crear tabla ventas
 
+que no nos deje ingresar a http://localhost:4000/admin.html si no me loguie
+
+
 
 
 

@@ -1,5 +1,4 @@
 import express from "express";
-import connection from "./api/database/db.js" ;
 import environments from "./api/config/environments.js";
 import cors from "cors";
 import productRoutes from "./api/routes/product.routes.js"

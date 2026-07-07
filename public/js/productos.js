@@ -147,12 +147,12 @@ function botonesOrden() {
     })
 
     botonMasMen.addEventListener("click", Event => {
-        productos_filtrados.sort((a, b) => a.precio - b.precio);
+        productos_filtrados.sort((a, b) => b.precio - a.precio);
         imprimirProductos(obtenerPaginaActual())
     })
 
     botonMenMas.addEventListener("click", Event => {
-        productos_filtrados.sort((a, b) => b.precio - a.precio);
+        productos_filtrados.sort((a, b) => a.precio - b.precio);
         imprimirProductos(obtenerPaginaActual())
     })
 }

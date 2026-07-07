@@ -123,15 +123,40 @@ boton_finalizar.addEventListener("click", Event => {
         return;
     }
     modal_confirmar.classList.remove("modal-oculto");
+    modal_confirmar.classList.add("modal-visible");
 })
 
 boton_confirmar_no.addEventListener("click", Event => {
+    modal_confirmar.classList.remove("modal-visible");
     modal_confirmar.classList.add("modal-oculto");
 })
 
-boton_confirmar_si.addEventListener("click", Event => {
-    window.location.href = "ticket.html";
-})
+boton_confirmar_si.addEventListener("click", async Event => {
+    let carrito = traerCarrito();
 
+    try {
+        const respuesta = await fetch("http://localhost:4000/api/ventas", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                carrito: carrito.map(item => ({
+                    id: item.id,
+                    precio: item.precio,
+                    cantidad: item.cantidad
+                }))
+            })
+        });
+
+        if (!respuesta.ok) {
+            alert("Hubo un error al registrar la compra. Intenta de nuevo.");
+            return;
+        }
+
+        window.location.href = "ticket.html";
+    } catch (error) {
+        console.error("Error al conectar con el servidor:", error);
+        alert("No se pudo conectar con el servidor. Verifica tu conexion.");
+    }
+})
 
 init()

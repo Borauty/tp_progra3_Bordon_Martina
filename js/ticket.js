@@ -4,8 +4,8 @@ const salirTicketButton = document.getElementById("salir-ticket");
 
 function renderTicket() {
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-    const nombre = localStorage.getItem("nombreUsuario") || "Cliente";
-
+    const nombre = sessionStorage.getItem("nombreCliente") || "Cliente";
+    
     document.getElementById("ticketUsuario").textContent = nombre;
     document.getElementById("ticketFecha").textContent = new Date().toLocaleDateString("es-AR", {
         day: "2-digit",
@@ -40,7 +40,7 @@ descargarPdfButton.addEventListener("click", () => {
 
 salirTicketButton.addEventListener("click", () => {
     localStorage.removeItem("carrito");
-    localStorage.removeItem("nombreUsuario");
+    sessionStorage.removeItem("nombreCliente");
     window.location.href = "index.html";
 });
 

@@ -6,6 +6,7 @@ import productRoutes from "./api/routes/product.routes.js"
 import viewRoutes from "./api/routes/view.routes.js"
 import session from "express-session";
 import authRoutes from "./api/routes/auth.routes.js";
+import ventaRoutes from "./api/routes/venta.routes.js";
 
 const { port, session_key } = environments;
 const app = express();
@@ -38,5 +39,6 @@ app.listen(PORT, () => {
 });
 
 app.use("/api/products", productRoutes);
+app.use("/api/ventas", ventaRoutes);
 app.use("/admin", viewRoutes);
 app.use("/", authRoutes);

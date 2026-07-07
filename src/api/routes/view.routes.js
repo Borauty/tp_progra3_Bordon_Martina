@@ -1,7 +1,10 @@
 import { Router } from "express";
 import { renderAdmin, renderGet, renderPost, renderPut, renderDelete, renderLogin } from "../controllers/view.controllers.js";
+
 import { requireLogin } from "../middlewares/middlewares.js";
+
 const router = Router();
+
 router.get("/", requireLogin, renderAdmin);
 router.get("/consultar", requireLogin, renderGet);
 router.get("/crear", requireLogin, renderPost);

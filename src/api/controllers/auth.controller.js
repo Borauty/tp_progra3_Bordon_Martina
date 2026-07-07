@@ -26,6 +26,12 @@ export const login = async (req, res) => {
         id: usuario.id,
         user: usuario.user
     };
-    return res.redirect("/admin.html");
+    return res.redirect("/admin");
 
+};
+
+export const logout = (req, res) => {
+    req.session.destroy(() => {
+        res.redirect("/admin/login");
+    });
 };

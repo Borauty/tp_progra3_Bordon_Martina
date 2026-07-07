@@ -27,12 +27,8 @@ app.use(
 app.set("view engine", "ejs");
 app.set("views", "./src/views");
 
-// Servimos los archivos estaticos (css, js, imagenes) desde la raiz del proyecto
-app.use(express.static("."));
-
-app.get("/", (req, res) => {
-    res.send("Hola mundo!");
-});
+// Servimos los archivos publicos desde la carpeta public
+app.use(express.static("public"));
 
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en el puerto ${PORT}`);

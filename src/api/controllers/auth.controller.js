@@ -26,6 +26,6 @@ export const login = async (req, res) => {
         id: usuario.id,
         user: usuario.user
     };
-    return res.redirect("/admin");
+    return res.redirect("/admin.html");
 
 };

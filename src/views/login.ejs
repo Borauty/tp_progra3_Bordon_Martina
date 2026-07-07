@@ -3,42 +3,45 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= titulo %></title>
+    <link rel="stylesheet" href="/css/login.css">
 </head>
 
 <body>
 
-    <h1>Iniciar sesión</h1>
+    <div class="login-card">
+        <h1>Iniciar sesión</h1>
+        <p>Ingresá tus credenciales para continuar</p>
 
-    <form action="/login" method="POST">
+        <form action="/login" method="POST">
 
-        <div>
-            <label>Usuario</label>
-            <input
-                type="text"
-                name="user"
-                required
-            >
-        </div>
+            <div class="form-group">
+                <label>Usuario</label>
+                <input
+                    type="text"
+                    name="user"
+                    placeholder="Tu usuario"
+                    required
+                >
+            </div>
 
-        <br>
+            <div class="form-group">
+                <label>Contraseña</label>
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="••••••••"
+                    required
+                >
+            </div>
 
-        <div>
-            <label>Contraseña</label>
-            <input
-                type="password"
-                name="password"
-                required
-            >
-        </div>
+            <button type="submit">
+                Ingresar
+            </button>
 
-        <br>
-
-        <button type="submit">
-            Ingresar
-        </button>
-
-    </form>
+        </form>
+    </div>
 
 </body>
 

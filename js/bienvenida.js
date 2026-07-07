@@ -31,6 +31,6 @@ function continuarCompra() {
 }
 
 function guardarNombreCliente(nombre) {
-    localStorage.setItem("nombreCliente", nombre);
+    sessionStorage.setItem("nombreCliente", nombre);
 }
 

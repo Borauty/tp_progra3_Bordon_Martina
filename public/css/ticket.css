@@ -102,3 +102,41 @@
 #salir-ticket:hover {
     background-color: var(--rosa) !important;
 }
+
+@media print {
+    @page {
+        margin: 15mm;
+    }
+
+    header,
+    .navegacion,
+    .botones-ticket,
+    footer {
+        display: none !important;
+    }
+
+    body {
+        min-height: 0 !important;
+        display: block !important;
+        background: white !important;
+        background-image: none !important;
+    }
+
+    main {
+        display: block !important;
+        flex: none !important;
+        padding: 0 !important;
+    }
+
+    .seccion-ticket {
+        display: block !important;
+        padding: 0 !important;
+    }
+
+    .ticket {
+        width: 100% !important;
+        max-width: none !important;
+        box-sizing: border-box;
+        page-break-inside: avoid;
+    }
+}

@@ -183,6 +183,7 @@ function agregarAlCarrito(producto) {
 
     almacenarCarrito(carrito);
     actualizarCarrito(carrito);
+    mostrarMensajeCarrito();
 }
 
 function almacenarCarrito(carrito) {
@@ -199,5 +200,16 @@ function actualizarCarrito(carrito) {
     cant_productos_carrito.innerText = total_items;
 }
 
+function mostrarMensajeCarrito() {
+    let mensaje = document.getElementById("mensaje-carrito");
+
+    mensaje.classList.remove("mensaje-carrito-oculto");
+    mensaje.classList.add("mensaje-carrito-visible");
+
+    setTimeout(() => {
+        mensaje.classList.remove("mensaje-carrito-visible");
+        mensaje.classList.add("mensaje-carrito-oculto");
+    }, 2000);
+}
 
 init()
